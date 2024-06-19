@@ -14,9 +14,8 @@ export default function BackgroundEffect() {
       }
       const width = container.offsetWidth
       const height = container.offsetHeight
-      console.log({width, height})
 
-      setNodeCount(Math.round((width * height) / 70000));
+      setNodeCount(Math.round((width * height) / 68000));
     }
 
     onResize()

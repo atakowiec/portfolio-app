@@ -10,7 +10,7 @@ export function useStageStyle(stage: number) {
     top: 0,
   }
 
-  if (currentStage < stage) return {
+  if (currentStage > stage) return {
     top: "-150%",
     transform: "scale(0.2)",
   }

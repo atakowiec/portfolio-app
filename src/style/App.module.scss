@@ -1,0 +1,26 @@
+@import "globals.module";
+
+.scrollButtonContainer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  margin-bottom: 0.3em;
+  width: 100%;
+  z-index: 20;
+  color: $accent-2;
+
+  * {
+    cursor: pointer;
+  }
+}
+
+.stageContainer {
+  padding-top: 10em;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  transition: 0.4s ease-in-out top, 0.4s ease-in-out transform;
+}

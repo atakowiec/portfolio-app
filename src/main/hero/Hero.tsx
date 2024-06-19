@@ -5,6 +5,8 @@ import {useState} from "react";
 import SingleStrength from "./SingleStrength.tsx";
 import {Row} from "react-bootstrap";
 import {useStageStyle} from "../../store/stateUtil.ts";
+import ScrollDownButton from "../../components/ScrollDownButton.tsx";
+import StageContainer from "../../components/StageContainer.tsx";
 
 const STRENGTHS = [
   "",
@@ -20,7 +22,7 @@ export default function Hero() {
   const [strengthsWidth, setStrengthsWidth] = useState<string>("0")
 
   return (
-    <div className={style.hero} style={useStageStyle(0)}>
+    <StageContainer stage={0} className={style.hero}>
       <Row className={"col-12 col-md-10 col-xxl-8 mx-auto justify-content-center"}>
         <div className={`${style.photo} col-12 col-md-auto text-center`}>
           <img src={"/assets/avatar.jpg"} alt={"My Photo"}/>
@@ -43,7 +45,8 @@ export default function Hero() {
           </div>
         </div>
       </Row>
+      <ScrollDownButton to={700} behavior={"instant"} />
       <BackgroundEffect/>
-    </div>
+    </StageContainer>
   )
 }
