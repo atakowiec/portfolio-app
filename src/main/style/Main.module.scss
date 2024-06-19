@@ -1,0 +1,79 @@
+@import "../../style/globals.module";
+
+.navbar {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid $accent-dark;
+  background-color: $background;
+  z-index: 1000;
+
+  .content {
+    padding: 1.5rem 10rem;
+    display: flex;
+    justify-content: space-between;
+
+    .phone {
+      font-size: 1.3rem;
+      color: $accent-2;
+      font-weight: bold;
+    }
+  }
+}
+
+@keyframes moveAlongCurve {
+  0% {
+    offset-distance: 0;
+    opacity: 0;
+  }
+  10% {
+    offset-distance: 10%;
+    opacity: 1;
+  }
+  90% {
+    offset-distance: 90%;
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+
+.backgroundEffectContainer {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  z-index: -1;
+
+  .node {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+.hoverableLettersBox {
+  display: flex;
+
+  .letter {
+    transition: 0.1s ease-in-out;
+    user-select: none;
+  }
+}

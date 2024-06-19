@@ -1,7 +1,13 @@
+import Main from "./main/Main.tsx";
+import {Provider} from "react-redux";
+import store from "./store";
+
 function App() {
   return (
     <>
-      app here :)
+      <Provider store={store}>
+        <Main/>
+      </Provider>
     </>
   )
 }
