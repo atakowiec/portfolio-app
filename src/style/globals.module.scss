@@ -8,7 +8,7 @@ $text-color: #FFFFFF;
 
 body {
   background-color: $background !important;
-  height: 5000px;
+  height: calc(100vh + 20px);
   margin: 0;
   font-family: "Chakra Petch", sans-serif;
   color: $text-color;
@@ -17,7 +17,7 @@ body {
 
 *::-webkit-scrollbar {
   width: 16px;
-  //display: none;
+  display: none;
 }
 
 *::-webkit-scrollbar-track {

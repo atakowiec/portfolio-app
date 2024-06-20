@@ -1,11 +1,10 @@
-import StageContainer from "../../components/StageContainer.tsx";
 
 export default function TechStack() {
   return (
-    <StageContainer stage={1}>
+    <div>
       <h1>
         TechStack
       </h1>
-    </StageContainer>
+    </div>
   )
 }

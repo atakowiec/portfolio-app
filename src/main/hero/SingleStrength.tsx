@@ -1,5 +1,6 @@
 import style from "./Hero.module.scss"
 import {useEffect, useRef, useState} from "react";
+import {useAppSelector} from "../../store/stateUtil.ts";
 
 interface SingleStrengthProps {
   strength: string;
@@ -9,20 +10,19 @@ interface SingleStrengthProps {
 }
 
 export default function SingleStrength(props: SingleStrengthProps) {
+  const layoutState = useAppSelector(state => state.layout)
   const {index, last} = props;
   const elementRef = useRef<HTMLDivElement>(null);
   const [top, setTop] = useState(0);
 
   useEffect(() => {
-    let innerTop = 100;
+    let innerTop;
 
-    if (scrollY >= index * 100 - 50 && scrollY <= index * 100 + 50) {
-      // innerTop = Math.max(0, Math.min(100, -100 * (scrollY - index * 100 + 50)))
+    if (layoutState.part == props.index) {
       innerTop = 0;
-    } else if (scrollY < index * 100 - 50) {
-      // innerTop = Math.max(-100, Math.min(0, -100 * (scrollY - index * 100 - 50)))
+    } else if (layoutState.part < props.index) {
       innerTop = 100;
-    } else if (scrollY > index * 100 + 50) {
+    } else {
       innerTop = -100;
     }
 
@@ -34,8 +34,10 @@ export default function SingleStrength(props: SingleStrengthProps) {
       innerTop = Math.min(innerTop, 0)
     }
 
+    // set strenghs box's width to the width of the current selected strength
     if (innerTop == 0) {
-      if(!elementRef.current?.offsetWidth || props.strength === "") {
+      // handle empty strength
+      if (!elementRef.current?.offsetWidth || props.strength === "") {
         props.setWidth("0")
       } else {
         props.setWidth(`calc(${elementRef.current.offsetWidth}px + 0.33em)`)
@@ -43,7 +45,7 @@ export default function SingleStrength(props: SingleStrengthProps) {
     }
 
     setTop(innerTop)
-  }, [scrollY, index, last, props]);
+  }, [index, last, props, layoutState.part]);
 
   return (
     <div className={style.strength} style={{top: `${top}px`}} ref={elementRef}>
