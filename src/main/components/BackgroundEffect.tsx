@@ -1,6 +1,6 @@
-import style from "../main/style/Main.module.scss"
+import style from "../style/Main.module.scss"
 import {RefObject, useEffect, useRef, useState} from "react";
-import {getColorBetween, random, randomPointOutsideRect} from "../util/util.ts";
+import {getColorBetween, random, randomPointOutsideRect} from "../../util/util.ts";
 
 export default function BackgroundEffect() {
   const containerRef = useRef<HTMLDivElement>(null)

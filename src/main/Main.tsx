@@ -1,21 +1,32 @@
-import Navbar from "../components/Navbar.tsx";
+import Navbar from "./components/Navbar.tsx";
 import {useEffect, useRef} from "react";
 import TechStack from "./techstack/TechStack.tsx";
 import Hero from "./hero/Hero.tsx";
-import StageWrapper from "../components/StageWrapper.tsx";
+import StageWrapper from "./components/StageWrapper.tsx";
 import {useDispatch} from "react-redux";
 import {layoutActions} from "../store/layoutSlice.ts";
+import {FaHome} from "react-icons/fa";
+import {BsStack} from "react-icons/bs";
+import {FaDiagramProject} from "react-icons/fa6";
 
 export const STAGE_CONFIG = [
   {
-    name: "Hero",
+    name: "Main",
+    icon: <FaHome/>,
     component: Hero,
     parts: 7
   },
   {
-    name: "TechStack",
+    name: "Tech Stack",
+    icon: <BsStack/>,
     component: TechStack,
-    parts: 0
+    parts: 1
+  },
+  {
+    name: "Projects",
+    icon: <FaDiagramProject/>,
+    component: TechStack,
+    parts: 1
   },
 ]
 

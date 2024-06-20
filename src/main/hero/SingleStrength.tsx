@@ -16,6 +16,7 @@ export default function SingleStrength(props: SingleStrengthProps) {
   const [top, setTop] = useState(0);
 
   useEffect(() => {
+    if(layoutState.stage != 0) return
     let innerTop;
 
     if (layoutState.part == props.index) {
@@ -45,7 +46,7 @@ export default function SingleStrength(props: SingleStrengthProps) {
     }
 
     setTop(innerTop)
-  }, [index, last, props, layoutState.part]);
+  }, [index, last, props, layoutState.part, layoutState.stage]);
 
   return (
     <div className={style.strength} style={{top: `${top}px`}} ref={elementRef}>

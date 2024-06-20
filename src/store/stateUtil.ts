@@ -7,16 +7,20 @@ export function useStageStyle(stage: number) {
   const currentStage = useAppSelector(state => state.layout.stage)
 
   if (currentStage == stage) return {
-    top: 0,
+    // top: 0,
+    transform: "scale(1)",
+    opacity: 1,
   }
 
   if (currentStage > stage) return {
-    top: "-150%",
-    transform: "scale(0.2)",
+    // top: "-150%",
+    transform: "scale(3)",
+    opacity: 0,
   }
 
   return {
-    top: "150%",
-    transform: "scale(1.8)",
+    // top: "150%",
+    transform: "scale(0)",
+    opacity: 0,
   }
 }

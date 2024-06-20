@@ -13,6 +13,10 @@ const layoutSlice = createSlice({
     part: 0
   } as LayoutState,
   reducers: {
+    setStage(state, action) {
+      state.stage = action.payload
+      state.part = 0
+    },
     nextPart(state) {
       const stageConfig = STAGE_CONFIG[state.stage]
 

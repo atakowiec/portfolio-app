@@ -1,7 +1,7 @@
 @import "globals.module";
 
 .scrollButtonContainer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -22,5 +22,5 @@
   width: 100%;
   position: fixed;
   box-sizing: border-box;
-  transition: 0.4s ease-in-out top, 0.4s ease-in-out transform;
+  transition: 0.4s ease-in-out top, 0.4s ease-in-out transform, 0.4s ease-in-out opacity;
 }

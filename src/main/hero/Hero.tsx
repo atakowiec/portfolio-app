@@ -1,10 +1,9 @@
 import style from "./Hero.module.scss"
-import BackgroundEffect from "../../components/BackgroundEffect.tsx";
+import BackgroundEffect from "../components/BackgroundEffect.tsx";
 import HoverableLetters from "./HoverableLetters.tsx";
 import {useState} from "react";
 import SingleStrength from "./SingleStrength.tsx";
 import {Row} from "react-bootstrap";
-import ScrollDownButton from "../../components/ScrollDownButton.tsx";
 
 const STRENGTHS = [
   "",
@@ -43,7 +42,6 @@ export default function Hero() {
           </div>
         </div>
       </Row>
-      <ScrollDownButton />
       <BackgroundEffect/>
     </div>
   )
