@@ -1,5 +1,5 @@
 import {Dispatch, ElementType, ReactNode, SetStateAction, useEffect, useState} from "react";
-import {useInView} from "react-intersection-observer";
+import {useInView} from "../../hooks/stageHooks.ts";
 
 interface ApearingBoxProps {
   as: ElementType,
@@ -11,7 +11,7 @@ interface ApearingBoxProps {
 }
 
 export default function AppearingBox(props: ApearingBoxProps) {
-  const {ref, inView} = useInView();
+  const inView = useInView()
   const [showed, setShowed] = useState(false)
   const duration = props.durationMs ?? 400
 
@@ -39,7 +39,6 @@ export default function AppearingBox(props: ApearingBoxProps) {
 
   return (
     <props.as className={props.className}
-              ref={ref}
               style={{opacity: showed && inView ? 1 : 0, transition: `opacity ${duration}ms ease-in-out`}}>
       {props.children}
     </props.as>
