@@ -14,7 +14,7 @@ export const MainPageConfig = [
     name: "Tech Stack",
     icon: <BsStack/>,
     component: TechStack,
-    parts: 1
+    parts: 2
   },
   // {
   //   name: "Projects",

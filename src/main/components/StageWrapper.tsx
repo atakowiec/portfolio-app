@@ -16,28 +16,17 @@ export default function StageWrapper({stage}: StageWrapperProps) {
   const [containerStyle, setContainerStyle] = useState({})
 
   useEffect(() => {
-    let timeout: number;
     if (currentStage == stage) {
       setContainerStyle({
-        top: 0,
         opacity: 1
       })
       return;
     }
 
-    if (currentStage > stage) {
-      setContainerStyle({
-        top: 0,
-        transform: "scale(3)",
-        opacity: 0,
-      })
-    } else {
-      setContainerStyle({
-        top: 0,
-        transform: "scale(0.5)",
-        opacity: 0,
-      })
-    }
+    setContainerStyle({
+      transform: currentStage > stage ? "scale(3)" : "scale(0.5)",
+      opacity: 0,
+    })
   }, [currentStage, stage]);
 
   return (
