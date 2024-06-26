@@ -2,7 +2,8 @@ import style from "../style/Main.module.scss"
 import {useDispatch} from "react-redux";
 import {layoutActions} from "../../store/layoutSlice.ts";
 import {useAppSelector} from "../../store/stateUtil.ts";
-import {STAGE_CONFIG} from "../Main.tsx";
+
+import {MainPageConfig} from "../MainPageConfig.tsx";
 
 export default function Navbar() {
   const currentStage = useAppSelector(state => state.layout.stage)
@@ -18,7 +19,7 @@ export default function Navbar() {
     <div className={style.navbar}>
       <div className={style.content}>
         {
-          STAGE_CONFIG.map((item, index) => (
+          MainPageConfig.map((item, index) => (
             <div key={index} className={`${style.navItem} ${currentStage == index ? style.active : ""}`}
                  onClick={scrollTo(index)}>
               {item.icon}

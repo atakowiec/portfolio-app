@@ -1,34 +1,9 @@
 import Navbar from "./components/Navbar.tsx";
 import {useEffect, useRef} from "react";
-import TechStack from "./techstack/TechStack.tsx";
-import Hero from "./hero/Hero.tsx";
 import StageWrapper from "./components/StageWrapper.tsx";
 import {useDispatch} from "react-redux";
 import {layoutActions} from "../store/layoutSlice.ts";
-import {FaHome} from "react-icons/fa";
-import {BsStack} from "react-icons/bs";
-import {FaDiagramProject} from "react-icons/fa6";
-
-export const STAGE_CONFIG = [
-  {
-    name: "Main",
-    icon: <FaHome/>,
-    component: Hero,
-    parts: 7
-  },
-  {
-    name: "Tech Stack",
-    icon: <BsStack/>,
-    component: TechStack,
-    parts: 1
-  },
-  {
-    name: "Projects",
-    icon: <FaDiagramProject/>,
-    component: TechStack,
-    parts: 1
-  },
-]
+import {MainPageConfig} from "./MainPageConfig.tsx";
 
 const SCROLL_EXCEESS = 20;
 
@@ -80,8 +55,8 @@ export default function Main() {
   return (
     <>
       <Navbar/>
-      {STAGE_CONFIG.map((_, i) => (
-        <StageWrapper stage={i} key={i}/>
+      {MainPageConfig.map((value, i) => (
+        <StageWrapper stage={i} key={value.name}/>
       ))}
     </>
   )

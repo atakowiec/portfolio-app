@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {STAGE_CONFIG} from "../main/Main.tsx";
+
+import {MainPageConfig} from "../main/MainPageConfig.tsx";
 
 export interface LayoutState {
   stage: number
@@ -18,10 +19,10 @@ const layoutSlice = createSlice({
       state.part = 0
     },
     nextPart(state) {
-      const stageConfig = STAGE_CONFIG[state.stage]
+      const stageConfig = MainPageConfig[state.stage]
 
       // if last stage and part
-      if(state.stage == STAGE_CONFIG.length - 1 && state.part >= stageConfig.parts - 1) {
+      if(state.stage == MainPageConfig.length - 1 && state.part >= stageConfig.parts - 1) {
         return state
       }
 
@@ -37,7 +38,7 @@ const layoutSlice = createSlice({
         return state
       }
 
-      const prevStageConfig = STAGE_CONFIG[state.stage - 1]
+      const prevStageConfig = MainPageConfig[state.stage - 1]
 
       state.part--
       if (state.part < 0) {
@@ -46,7 +47,7 @@ const layoutSlice = createSlice({
       }
     },
     nextStage(state) {
-      if (state.stage >= STAGE_CONFIG.length - 1) {
+      if (state.stage >= MainPageConfig.length - 1) {
         return state
       }
 

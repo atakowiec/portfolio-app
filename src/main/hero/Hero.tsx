@@ -22,7 +22,7 @@ export default function Hero() {
     <div className={style.hero}>
       <Row className={"col-12 col-md-10 col-xxl-8 mx-auto justify-content-center"}>
         <div className={`${style.photo} col-12 col-md-auto text-center`}>
-          <img src={"/assets/avatar.jpg"} alt={"My Photo"}/>
+          <img src={"https://placehold.co/69"} alt={"My Photo"}/>
         </div>
         <div className={`col-12 col-md-auto align-content-center`}>
           <HoverableLetters text={"Mateusz Cięszczyk"} className={style.names}/>
