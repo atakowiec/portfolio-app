@@ -30,7 +30,7 @@ export default function SingleTech(props: SingleTechProps) {
   }, [showedLevel, showed, props.level])
 
   return (
-    <AppearingBox as={"div"} delay={props.index * 100} className={`${style.language} col-6 col-md-3`} setShowedFunction={setShowed}>
+    <AppearingBox as={"div"} delay={props.index * 100} className={`${style.language} col-6 col-lg-3`} setShowedFunction={setShowed}>
       <div className={style.name}>
         {props.icon}
         <div>

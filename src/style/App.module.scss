@@ -1,5 +1,30 @@
 @import "globals.module";
 
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  html {
+    font-size: 15px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 12px !important;
+  }
+}
+
 .scrollButtonContainer {
   position: fixed;
   bottom: 0;

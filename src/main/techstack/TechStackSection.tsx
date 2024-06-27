@@ -16,7 +16,7 @@ export default function TechStackSection(props: TechStackSectionProps) {
       <AppearingBox as={"h2"} delay={0}>
         {props.title}
       </AppearingBox>
-      <Row className={`${style.languages} col-12 col-md-8 mx-auto`}>
+      <Row className={`${style.languages} col-12 col-xl-8 mx-auto`}>
         {props.techStack.map((element, i) => (
           <SingleTech key={element.name}
                       name={element.name}
